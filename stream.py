@@ -20,7 +20,7 @@ if st.session_state.clicked:
            with open(file_path,"wb") as f:
                 f.write(uploaded_file.getvalue())
            with open(file_path,"rb") as f:
-                response=requests.post("http://127.0.0.1:8000/upload/pdf",files={"file":f})
+                response=requests.post("https://genuine-honeybee-deep.ngrok-free.app/upload/pdf/",files={"file":f})
                 if response.status_code==200:
                      st.write("your exam pdf is uploaded successfully")
                      st.write("Your questions are coming shortly")
@@ -29,7 +29,7 @@ with st.form(key="my-input"):
      text_input=st.text_input("Enter your topic")
      submitted=st.form_submit_button("ask")
      if submitted:
-        response=requests.post(url="http://127.0.0.1:8000/ask",json={"query":text_input},headers={'Content-Type': 'application/json'})
+        response=requests.post(url="https://genuine-honeybee-deep.ngrok-free.app/ask",json={"query":text_input},headers={'Content-Type': 'application/json'})
         if response.status_code==200:
           response_dict=response.json()
          #print(response_dict['response']['content'])
