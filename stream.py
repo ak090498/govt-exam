@@ -1,11 +1,6 @@
 import streamlit as st
-import pypdf as pdf
-from utility import Utility
-import tempfile
-import re
 import os
 import requests
-from io import StringIO
 import json
 if 'clicked' not in st.session_state:
     st.session_state.clicked=False  
