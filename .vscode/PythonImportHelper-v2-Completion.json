@@ -1,0 +1,47 @@
+[
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "click_button",
+        "kind": 2,
+        "importPath": "stream",
+        "description": "stream",
+        "peekOfCode": "def click_button():\n    st.session_state.clicked=True \nuploaded_file=st.file_uploader(\"upload file\",type=\"pdf\")\nst.button('upload',on_click=click_button)\nif st.session_state.clicked:\n    if uploaded_file is not None:\n           UPLOAD_DIR=\"stream_uploads\"\n           if not os.path.exists(UPLOAD_DIR):\n                os.makedirs(UPLOAD_DIR)\n           file_path=os.path.join(UPLOAD_DIR,uploaded_file.name)     ",
+        "detail": "stream",
+        "documentation": {}
+    }
+]
