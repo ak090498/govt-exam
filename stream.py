@@ -26,7 +26,8 @@ if st.session_state.clicked:
                      st.write("Your questions are coming shortly")
            os.remove(file_path)
 counter=0
-json_obj=""                    
+json_obj=""
+answer_input_list=[]                    
 with st.form(key="my-input"):
      text_input=st.text_input("Enter your topic")
      submitted=st.form_submit_button("ask")
@@ -45,10 +46,11 @@ with st.form(key="exam"):
                     st.write(json_obj[i]['question'])
                     st.write(json_obj[i]['options'])
                     answer_input=st.text_input("Enter your answer",key="answer_input"+str(i))
+                    answer_input_list.append(answer_input)
                submitted=st.form_submit_button("submit your answers")
                if submitted:
                     for i in range(0,len(json_obj)):
-                         if answer_input==json_obj[i]['correct_answer']:
+                         if answer_input[i]==json_obj[i]['correct_answer']:
                               counter+=1
                     st.write(f"You have answered {counter} questions correctly")
 
