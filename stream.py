@@ -42,7 +42,7 @@ with st.form(key="my-input"):
           for i in range(0,len(json_obj)):
                st.write(json_obj[i]['question'])
                st.write(json_obj[i]['options'])
-               answer_input=st.text_input("Enter your answer")
+               answer_input=st.text_input("Enter your answer",key="answer_input"+str(i))
                submitted=st.form_submit_button("answer",key="answer"+str(i))
                if submitted:
                    if answer_input==json_obj[i]['correct_answer']:
