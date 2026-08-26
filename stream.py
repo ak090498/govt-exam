@@ -45,13 +45,14 @@ if json_obj!="":
                     st.write(json_obj[i]['question'])
                     st.write(json_obj[i]['options'])
                     answer_input=st.text_input("Enter your answer",key="answer_input"+str(i))
-                    submitted=st.button("answer",key="answer"+str(i))
-                    if submitted:
+               submitted=st.form_submit_button("submit your answers")
+               if submitted:
+                    for i in range(0,len(json_obj)):
                          if answer_input==json_obj[i]['correct_answer']:
                               st.markdown(":green[correct answer]")
                               st.write(f"You have answered {counter} questions correctly")
                               counter+=1
-                         else:
+                    else:
                               st.markdown(":red[wrong answer]")
 
                # st.write(json_obj[i]['correct_answer'])
