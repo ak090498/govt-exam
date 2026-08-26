@@ -43,7 +43,7 @@ with st.form(key="my-input"):
                st.write(json_obj[i]['question'])
                st.write(json_obj[i]['options'])
                answer_input=st.text_input("Enter your answer")
-               submitted=st.form_submit_button("answer")
+               submitted=st.form_submit_button("answer",key="answer"+str(i))
                if submitted:
                    if answer_input==json_obj[i]['correct_answer']:
                       st.markdown(":green[correct answer]")
