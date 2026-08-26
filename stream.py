@@ -49,11 +49,8 @@ if json_obj!="":
                if submitted:
                     for i in range(0,len(json_obj)):
                          if answer_input==json_obj[i]['correct_answer']:
-                              st.markdown(":green[correct answer]")
-                              st.write(f"You have answered {counter} questions correctly")
                               counter+=1
-                    else:
-                              st.markdown(":red[wrong answer]")
+                    st.write(f"You have answered {counter} questions correctly")
 
                # st.write(json_obj[i]['correct_answer'])
           
