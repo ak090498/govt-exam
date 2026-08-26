@@ -39,7 +39,7 @@ with st.form(key="my-input"):
           q_and_a_str=response_str[7:len(response_str)-3]
           json_obj = json.loads(q_and_a_str)
 
-     if json_obj!="":
+if json_obj!="":
           with st.form(key="exam"):
                for i in range(0,len(json_obj)):
                     st.write(json_obj[i]['question'])
